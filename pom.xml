@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.ce.wcaquino</groupId>
-	<artifactId>tasks-backend</artifactId>
+	<artifactId>A1-tasks-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>tasks-backend</name>
+	<name>A1-tasks-backend</name>
 	<packaging>war</packaging>
 	<description>A very simple task management tool</description>
 
