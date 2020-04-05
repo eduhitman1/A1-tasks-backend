@@ -58,5 +58,16 @@ pipeline{
                 }
        }
 
+        
+       stage('Funcional Test'){
+            steps{
+                dir('funcional-test') {
+                     git credentialsId: 'login_github', url: 'https://github.com/eduhitman1/A1-funcional-tasks'
+                     bat 'mvn test'
+                    }
+                }
+        }
+
+
     }
 }
