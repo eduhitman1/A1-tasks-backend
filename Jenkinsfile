@@ -46,6 +46,17 @@ pipeline{
                      bat 'mvn test'
                     }
                 }
-       }   
+       }
+
+       stage('Deploy Frontend'){
+            steps{
+                 dir('frontend'){
+                 git credentialsId: 'login_github', url: 'https://github.com/eduhitman1/A1-tasks-frontend'
+                 bat 'mvn clean package'
+                 deploy adapters: [tomcat8(credentialsId: 'TomcatLogin', path: '', url: 'http://localhost:8001/')], contextPath: 'tasks', war: 'target/tasks.war'        
+                 }
+                }
+       }
+
     }
 }
