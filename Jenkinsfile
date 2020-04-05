@@ -41,15 +41,11 @@ pipeline{
         
         stage('API Test'){
             steps{
-                 git credentialsId: 'login_github', url: 'https://github.com/eduhitman1/A1-tasks-api-test'
-                 bat 'mvn test'
+                dir('api-test') {
+                     git credentialsId: 'login_github', url: 'https://github.com/eduhitman1/A1-tasks-api-test'
+                     bat 'mvn test'
+                    }
                 }
-        }
+       }   
     }
 }
-
-
-
-
-
-
